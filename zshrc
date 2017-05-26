@@ -23,7 +23,6 @@ alias gps='git push'
 alias gpl='git pull'
 
 alias r='rails'
-alias rg='rails g'
 alias rs='rails s'
 alias rc='rails c'
 alias rn='rails new'
@@ -46,7 +45,8 @@ export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 zplug "frmendes/geometry", as:theme
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "zsh-users/zsh-history-substring-search"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "hlissner/zsh-autopair", defer:2
 zplug load
 
 # Install plugins if there are plugins that have not been installed
