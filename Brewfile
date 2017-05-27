@@ -18,6 +18,7 @@ brew "tmux"
 brew "zplug"
 brew "zsh"
 
+cask "hyper"
 cask "atom"
 cask "docker"
 cask "spotify"
