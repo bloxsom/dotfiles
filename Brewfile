@@ -18,6 +18,7 @@ brew "tmux"
 brew "zplug"
 brew "zsh"
 
+cask "1password"
 cask "atom"
 cask "docker"
 cask "google-chrome"
