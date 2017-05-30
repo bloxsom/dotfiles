@@ -58,3 +58,4 @@ if ! zplug check --verbose; then
 fi
 
 export GEOMETRY_PROMPT_PREFIX=""              # prefix prompt with a new line
+export CLICOLOR=1
