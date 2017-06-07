@@ -7,6 +7,9 @@
     userId: "7ffede64-9468-7be4-0c7a-e35828a364eb"
   "go-plus":
     currentPanelHeight: "38.72222222222222vh"
+    disabledBundledPackages: [
+      "go-debug"
+    ]
     panel:
       currentHeight: "29.382621951219512vh"
   "linter-ui-default":
