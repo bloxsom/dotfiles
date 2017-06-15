@@ -60,9 +60,13 @@ function! DoRemote(arg)
 endfunction
 
 call plug#begin()
-Plug 'AndrewRadev/splitjoin.vim'
-Plug 'airblade/vim-gitgutter'
 "Plug 'ap/vim-css-color'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/echodoc.vim'
+Plug 'airblade/vim-gitgutter'
 Plug 'benekastah/neomake'
 Plug 'bkad/CamelCaseMotion'
 Plug 'bronson/vim-trailing-whitespace'
@@ -71,12 +75,15 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'edkolev/tmuxline.vim'
 Plug 'ervandew/supertab'
 Plug 'fatih/vim-go'
+Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf'
 Plug 'justinmk/vim-sneak'
 Plug 'kana/vim-textobj-user'
 Plug 'kchmck/vim-coffee-script'
+Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'mhinz/vim-janah'
 Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/gem-ctags'
 Plug 'tpope/vim-bundler'
@@ -90,14 +97,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-tbone'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
-Plug 'itchyny/lightline.vim'
 Plug 'w0ng/vim-hybrid'
 Plug 'wellle/targets.vim'
-Plug 'kristijanhusak/vim-hybrid-material'
-Plug 'Shougo/echodoc.vim'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 call plug#end()
 
