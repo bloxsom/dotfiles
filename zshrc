@@ -15,6 +15,8 @@ else
   export VISUAL='nvim'
 fi
 
+alias dc='docker-compose'
+
 alias gs='git status'
 alias ga='git add'
 alias gd='git diff'
@@ -30,10 +32,7 @@ alias rn='rails new'
 alias v='vim'
 
 # Skip forward/back a word with opt-arrow
-#bindkey '[C' forward-word
-#bindkey '[D' backward-word
-bindkey -e
-set -o emacs
+bindkey -v
 
 alias gt="godep go test \$(go list ./... | grep -v /vendor/)"
 alias gtc="godep go test -covermode=count \$(go list ./... | grep -v /vendor/)"
