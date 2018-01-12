@@ -21,7 +21,6 @@ brew "zplug"
 brew "zsh"
 
 cask "1password"
-cask "atom"
 cask "docker-edge"
 cask "google-chrome"
 cask "hyper"
