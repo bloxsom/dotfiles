@@ -24,6 +24,8 @@ set smartcase
 
 set noshowmode
 
+set shell=zsh
+
 if has("autocmd")
   filetype indent plugin on
 endif
@@ -40,6 +42,8 @@ nmap <leader>q :q<CR>
 nmap <leader>w :w<CR>
 nmap <leader>x :x<CR>
 nmap <leader>f :FZF<CR>
+nmap <leader>g :Rg<space>
+autocmd BufRead,BufNewFile *.go nmap <leader>t :GoTest<CR>
 
 tnoremap <C-h> <C-\><C-n><C-w>h
 tnoremap <C-j> <C-\><C-n><C-w>j
@@ -65,14 +69,12 @@ call plug#begin()
 "Plug 'vim-airline/vim-airline-themes'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/echodoc.vim'
+"Plug 'Shougo/echodoc.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'benekastah/neomake'
+Plug 'neomake/neomake'
 Plug 'bkad/CamelCaseMotion'
 Plug 'bronson/vim-trailing-whitespace'
-Plug 'chrisbra/NrrwRgn'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'edkolev/tmuxline.vim'
 Plug 'ervandew/supertab'
 Plug 'fatih/vim-go'
 Plug 'itchyny/lightline.vim'
@@ -87,7 +89,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/gem-ctags'
 Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-obsession'
@@ -97,9 +98,11 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-tbone'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-Plug 'w0ng/vim-hybrid'
+"Plug 'roxma/nvim-completion-manager'
+"Plug 'w0ng/vim-hybrid'
 Plug 'wellle/targets.vim'
-Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'jremmen/vim-ripgrep'
+"Plug 'zchee/deoplete-go', { 'do': 'make'}
 call plug#end()
 
 " Pretty colors
@@ -126,11 +129,12 @@ nmap <leader>cb <Plug>CamelCaseMotion_b
 nmap <leader>ce <Plug>CamelCaseMotion_e
 nmap <leader>cge <Plug>CamelCaseMotion_ge
 
-" Neomake
-autocmd! BufWritePost * Neomake
+" When writing a buffer, and on normal mode changes (after 750ms).
+"call neomake#configure#automake('nw', 750)
+"let g:neomake_open_list = 2
 
 " Use deoplete.
-"let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 1
 
 let g:tmuxline_powerline_separators = 0
 
