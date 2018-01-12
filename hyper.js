@@ -73,7 +73,7 @@ module.exports = {
     // make sure to use a full path if the binary name doesn't work
     // (e.g `C:\\Windows\\System32\\bash.exe` instead of just `bash.exe`)
     // if you're using powershell, make sure to remove the `--login` below
-    shell: 'zsh',
+    shell: '/bin/zsh',
 
     // for setting shell arguments (i.e. for using interactive shellArgs: ['-i'])
     // by default ['--login'] will be used
@@ -106,8 +106,8 @@ module.exports = {
   //   `project#1.0.1`
   plugins: [
     'hyperterm-material',
-    'hyperline',
-    'hyperterm-blink',
+    'hyperline#0.6.1',
+    'hyperterm-blink'
   ],
 
   // in development, you can create a directory under
