@@ -22,7 +22,7 @@ brew "zsh"
 
 cask "1password"
 cask "atom"
-cask "docker"
+cask "docker-edge"
 cask "google-chrome"
 cask "hyper"
 cask "shiftit"
