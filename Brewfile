@@ -1,5 +1,6 @@
 cask_args appdir: "/Applications"
 
+tap "caskroom/versions"
 tap "neovim/neovim"
 brew "neovim"
 
@@ -8,7 +9,6 @@ brew "rcm"
 
 brew "git"
 brew "go"
-brew "htop-osx"
 brew "jq"
 brew "mysql56"
 brew "node"
