@@ -1,10 +1,12 @@
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+source $HOME/.rvm/scripts/rvm
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
