@@ -44,6 +44,7 @@ nmap <leader>x :x<CR>
 nmap <leader>f :FZF<CR>
 nmap <leader>g :Rg<space>
 autocmd BufRead,BufNewFile *.go nmap <leader>t :GoTest<CR>
+autocmd BufRead,BufNewFile *.rb nmap <leader>t :TestFile --format documentation<CR>
 
 tnoremap <C-h> <C-\><C-n><C-w>h
 tnoremap <C-j> <C-\><C-n><C-w>j
@@ -102,6 +103,7 @@ Plug 'tpope/vim-vinegar'
 "Plug 'w0ng/vim-hybrid'
 Plug 'wellle/targets.vim'
 Plug 'jremmen/vim-ripgrep'
+Plug 'janko-m/vim-test'
 "Plug 'zchee/deoplete-go', { 'do': 'make'}
 call plug#end()
 
