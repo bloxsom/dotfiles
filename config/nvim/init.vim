@@ -43,8 +43,6 @@ nmap <leader>w :w<CR>
 nmap <leader>x :x<CR>
 nmap <leader>f :FZF<CR>
 nmap <leader>g :Rg<space>
-autocmd BufRead,BufNewFile *.go nmap <leader>t :GoTest<CR>
-autocmd BufRead,BufNewFile *.rb nmap <leader>t :TestFile --format documentation<CR>
 
 tnoremap <C-h> <C-\><C-n><C-w>h
 tnoremap <C-j> <C-\><C-n><C-w>j
@@ -54,11 +52,12 @@ tnoremap <C-l> <C-\><C-n><C-w>l
 nnoremap <leader>b :ls<CR>:b<space>
 
 " Rails
-nmap <leader>rs :Estylesheet<space>
-nmap <leader>rv :Eview<space>
-nmap <leader>rj :Ejavascript<space>
-nmap <leader>rm :Emodel<space>
-nmap <leader>rc :Econtroller<space>
+autocmd FileType ruby nmap <leader>t :TestFile --format documentation<CR>
+autocmd FileType ruby nmap <leader>rs :Estylesheet<space>
+autocmd FileType ruby nmap <leader>rv :Eview<space>
+autocmd FileType ruby nmap <leader>rj :Ejavascript<space>
+autocmd FileType ruby nmap <leader>rm :Emodel<space>
+autocmd FileType ruby nmap <leader>rc :Econtroller<space>
 
 function! DoRemote(arg)
   UpdateRemotePlugins
@@ -148,3 +147,9 @@ let g:lightline = {
 \ }
 
 let g:go_fmt_command = "goimports"
+let g:go_auto_type_info = 1
+set updatetime=100
+autocmd FileType go nmap <leader>b <Plug>(go-build)
+autocmd FileType go nmap <leader>r <Plug>(go-run)
+autocmd FileType go nmap <Leader>i <Plug>(go-info)
+autocmd FileType go nmap <leader>t <Plug>(go-test)
