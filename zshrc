@@ -36,8 +36,8 @@ alias v='vim'
 # Skip forward/back a word with opt-arrow
 bindkey -v
 
-alias gt="godep go test \$(go list ./... | grep -v /vendor/)"
-alias gtc="godep go test -covermode=count \$(go list ./... | grep -v /vendor/)"
+alias gt="go test ./..."
+alias gtc="go test -covermode=count ./..."
 function gth() {
   godep go test -covermode=count -coverprofile=count.out ./$1 && godep go tool cover -html=count.out
 }
@@ -72,3 +72,6 @@ setopt hist_ignore_space
 setopt hist_verify
 setopt inc_append_history
 setopt share_history # share command history data
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
