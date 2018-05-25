@@ -11,13 +11,16 @@ module.exports = {
     fontFamily: 'Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
 
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
-    cursorColor: 'rgba(156,204,101,0.5)',
+    cursorColor: 'rgb(135,255,95)',
+    cursorColor: 'rgb(255,175,135)',
+    cursorColor: 'rgb(254,233,78)',
+    cursorColor: 'rgb(135,215,255)',
 
     // `BEAM` for |, `UNDERLINE` for _, `BLOCK` for █
     cursorShape: 'BLOCK',
 
     // set to true for blinking cursor
-    cursorBlink: false,
+    cursorBlink: true,
 
     // color of the text
     foregroundColor: '#fff',
@@ -41,7 +44,7 @@ module.exports = {
     // set to `false` if you want to hide the minimize, maximize and close buttons
     // additionally, set to `'left'` if you want them on the left, like in Ubuntu
     // default: `true` on windows and Linux (ignored on macOS)
-    showWindowControls: '',
+    showWindowControls: 'false',
 
     // custom padding (css format, i.e.: `top right bottom left`)
     padding: '12px 14px 20px 14px',
@@ -105,9 +108,8 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
-    'hyperterm-material',
-    'hyperline#0.6.1',
-    'hyperterm-blink'
+    "hyperterm-material",
+    "hyperline"
   ],
 
   // in development, you can create a directory under
