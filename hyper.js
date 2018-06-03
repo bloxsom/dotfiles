@@ -44,10 +44,10 @@ module.exports = {
     // set to `false` if you want to hide the minimize, maximize and close buttons
     // additionally, set to `'left'` if you want them on the left, like in Ubuntu
     // default: `true` on windows and Linux (ignored on macOS)
-    showWindowControls: 'false',
+    showWindowControls: false,
 
     // custom padding (css format, i.e.: `top right bottom left`)
-    padding: '12px 14px 20px 14px',
+    padding: '10px 14px 10px 14px',
 
     // the full list. if you're going to provide the full color palette,
     // including the 6 x 6 color cubes and the grayscale map, just provide
@@ -89,7 +89,7 @@ module.exports = {
     bell: 'SOUND',
 
     // if true, selected text will automatically be copied to the clipboard
-    copyOnSelect: false
+    copyOnSelect: false,
 
     // if true, on right click selected text will be copied or pasted if no
     // selection is present (true by default on Windows)
@@ -99,6 +99,11 @@ module.exports = {
     // bellSoundURL: 'http://example.com/bell.mp3',
 
     // for advanced config flags please refer to https://hyper.is/#cfg
+    hyperTabs: {
+      trafficButtons: false,
+      border: false,
+      tabIconsColored: true,
+    },
   },
 
   // a list of plugins to fetch and install from npm
@@ -109,8 +114,11 @@ module.exports = {
   //   `project#1.0.1`
   plugins: [
     "hyperterm-material",
-    "hyperline"
+    "hyper-statusline",
+    "hyper-tabs-enhanced",
+    //"hyperline",
   ],
+
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
