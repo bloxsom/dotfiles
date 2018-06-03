@@ -42,12 +42,14 @@ function gth() {
   godep go test -covermode=count -coverprofile=count.out ./$1 && godep go tool cover -html=count.out
 }
 
+GEOMETRY_PROMPT_PLUGINS=(exec_time hg)
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 zplug "frmendes/geometry", as:theme
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-autosuggestions"
 zplug "hlissner/zsh-autopair", defer:2
+zplug "zuxfoucault/colored-man-pages_mod"
 zplug load
 
 # Install plugins if there are plugins that have not been installed
