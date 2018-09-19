@@ -33,8 +33,7 @@ alias rn='rails new'
 
 alias v='vim'
 
-# Skip forward/back a word with opt-arrow
-bindkey -v
+bindkey -e
 
 alias gt="go test ./..."
 alias gtc="go test -covermode=count ./..."
@@ -74,6 +73,8 @@ setopt hist_ignore_space
 setopt hist_verify
 setopt inc_append_history
 setopt share_history # share command history data
+# Enable Ctrl-x-e to edit command line
 autoload -U edit-command-line
 zle -N edit-command-line
-bindkey -M vicmd v edit-command-line
+bindkey '^xe' edit-command-line
+bindkey '^x^e' edit-command-line
