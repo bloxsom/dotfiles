@@ -29,7 +29,7 @@ set shell=zsh
 if has("autocmd")
   filetype indent plugin on
 endif
-set omnifunc=syntaxcomplete#Complete
+"set omnifunc=syntaxcomplete#Complete
 autocmd BufRead,BufNewFile *.es6 setfiletype javascript
 
 
@@ -43,6 +43,7 @@ nmap <leader>w :w<CR>
 nmap <leader>x :x<CR>
 nmap <leader>f :FZF<CR>
 nmap <leader>g :Rg<space>
+nmap <leader>d :Gdiff<CR>
 
 tnoremap <C-h> <C-\><C-n><C-w>h
 tnoremap <C-j> <C-\><C-n><C-w>j
@@ -64,12 +65,8 @@ function! DoRemote(arg)
 endfunction
 
 call plug#begin()
-"Plug 'ap/vim-css-color'
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-"Plug 'Shougo/echodoc.vim'
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'airblade/vim-gitgutter'
 Plug 'neomake/neomake'
 Plug 'bkad/CamelCaseMotion'
@@ -89,6 +86,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/gem-ctags'
 Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-obsession'
@@ -98,12 +96,11 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-tbone'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-"Plug 'roxma/nvim-completion-manager'
-"Plug 'w0ng/vim-hybrid'
 Plug 'wellle/targets.vim'
 Plug 'jremmen/vim-ripgrep'
 Plug 'janko-m/vim-test'
-"Plug 'zchee/deoplete-go', { 'do': 'make'}
+"Plug 'fishbullet/deoplete-ruby', { 'for': 'ruby' }
+Plug 'w0rp/ale'
 call plug#end()
 
 " Pretty colors
@@ -135,7 +132,9 @@ nmap <leader>cge <Plug>CamelCaseMotion_ge
 "let g:neomake_open_list = 2
 
 " Use deoplete.
-let g:deoplete#enable_at_startup = 1
+"let g:deoplete#enable_at_startup = 1
+"let g:deoplete#ignore_sources = get(g:,'deoplete#ignore_sources',{})
+"let g:deoplete#ignore_sources.ruby = ['tag']
 
 let g:tmuxline_powerline_separators = 0
 
@@ -153,3 +152,12 @@ autocmd FileType go nmap <leader>b <Plug>(go-build)
 autocmd FileType go nmap <leader>r <Plug>(go-run)
 autocmd FileType go nmap <Leader>i <Plug>(go-info)
 autocmd FileType go nmap <leader>t <Plug>(go-test)
+
+" omnifuncs
+set omnifunc=syntaxcomplete#Complete
+"autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+"autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+"autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+"autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+"autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+"autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
