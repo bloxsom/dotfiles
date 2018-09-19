@@ -4,6 +4,7 @@
 
 module.exports = {
   config: {
+    updateChannel: 'canary',
     // default font size in pixels for all tabs
     fontSize: 12,
 
@@ -114,8 +115,8 @@ module.exports = {
   //   `project#1.0.1`
   plugins: [
     "hyperterm-material",
-    "hyper-statusline",
-    "hyper-tabs-enhanced",
+    //"hyper-statusline",
+    //"hyper-tabs-enhanced",
     //"hyperline",
   ],
 
