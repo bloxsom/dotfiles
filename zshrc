@@ -1,13 +1,3 @@
-export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/sbin:$PATH
-
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-source $HOME/.rvm/scripts/rvm
-
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
@@ -63,18 +53,28 @@ export GEOMETRY_PROMPT_PREFIX=""              # prefix prompt with a new line
 export CLICOLOR=1
 
 HISTFILE=$HOME/.zsh_history
-HISTSIZE=1000
-SAVEHIST=1000
-setopt append_history
-setopt extended_history
-setopt hist_expire_dups_first
-setopt hist_ignore_dups # ignore duplication command history list
-setopt hist_ignore_space
-setopt hist_verify
-setopt inc_append_history
-setopt share_history # share command history data
+HISTSIZE=50000
+SAVEHIST=10000
+setopt extended_history       # record timestamp of command in HISTFILE
+setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
+setopt hist_ignore_dups       # ignore duplicated commands history list
+setopt hist_ignore_space      # ignore commands that start with space
+setopt hist_verify            # show command with history expansion to user before running it
+setopt inc_append_history     # add commands to HISTFILE in order of execution
+setopt share_history          # share command history data
+
 # Enable Ctrl-x-e to edit command line
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '^xe' edit-command-line
 bindkey '^x^e' edit-command-line
+
+export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/sbin:$PATH
+
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+source $HOME/.rvm/scripts/rvm
