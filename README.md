@@ -8,7 +8,7 @@ Install Homebrew.
 Install Homebrew formulae from the `Brewfile`.
 
     brew bundle
-    
+
 Symlink dotfiles.
 
     rcup -v
