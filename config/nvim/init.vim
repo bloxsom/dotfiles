@@ -71,29 +71,19 @@ Plug 'airblade/vim-gitgutter'
 Plug 'neomake/neomake'
 Plug 'bkad/CamelCaseMotion'
 Plug 'bronson/vim-trailing-whitespace'
-Plug 'christoomey/vim-tmux-navigator'
 Plug 'ervandew/supertab'
 Plug 'fatih/vim-go'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf'
 Plug 'justinmk/vim-sneak'
 Plug 'kana/vim-textobj-user'
-Plug 'kchmck/vim-coffee-script'
-Plug 'kristijanhusak/vim-hybrid-material'
-Plug 'mhinz/vim-janah'
 Plug 'nelstrom/vim-textobj-rubyblock'
-Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/nerdcommenter'
-Plug 'tpope/gem-ctags'
-Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-tbone'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'wellle/targets.vim'
@@ -135,8 +125,6 @@ nmap <leader>cge <Plug>CamelCaseMotion_ge
 "let g:deoplete#enable_at_startup = 1
 "let g:deoplete#ignore_sources = get(g:,'deoplete#ignore_sources',{})
 "let g:deoplete#ignore_sources.ruby = ['tag']
-
-let g:tmuxline_powerline_separators = 0
 
 let g:lightline = {
   \ 'colorscheme': 'wombat',
