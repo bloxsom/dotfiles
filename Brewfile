@@ -9,6 +9,7 @@ brew "rcm"
 
 brew "git"
 brew "go"
+brew "httpie"
 brew "jq"
 brew "mysql"
 brew "mysql56"
