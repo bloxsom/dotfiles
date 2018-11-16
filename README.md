@@ -1,14 +1,14 @@
 ![.dotfiles banner](/.assets/banner.png?raw=true "Github Banner")
 
 ## Installing
-Install Homebrew.
+Install Homebrew:
 
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-Install Homebrew formulae from the `Brewfile`.
+Install Homebrew formulae from the `Brewfile`:
 
     brew bundle
 
-Symlink dotfiles.
+Symlink dotfiles:
 
     rcup -v
