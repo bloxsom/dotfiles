@@ -17,6 +17,8 @@ module.exports = {
     cursorColor: 'rgb(254,233,78)',
     cursorColor: 'rgb(135,215,255)',
 
+    selectionColor: 'rgb(221,238,255,1.0)',
+
     // `BEAM` for |, `UNDERLINE` for _, `BLOCK` for █
     cursorShape: 'BLOCK',
 
@@ -115,7 +117,7 @@ module.exports = {
   //   `project#1.0.1`
   plugins: [
     "hyperterm-material",
-    //"hyper-statusline",
+    "hyper-statusline",
     //"hyper-tabs-enhanced",
     //"hyperline",
   ],
