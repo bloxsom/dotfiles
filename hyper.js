@@ -25,6 +25,8 @@ module.exports = {
     // set to true for blinking cursor
     cursorBlink: true,
 
+    scrollback: 100000,
+
     // color of the text
     foregroundColor: '#fff',
 
