@@ -94,6 +94,8 @@ Plug 'jremmen/vim-ripgrep'
 Plug 'janko-m/vim-test'
 "Plug 'fishbullet/deoplete-ruby', { 'for': 'ruby' }
 Plug 'w0rp/ale'
+Plug 'zxqfl/tabnine-vim'
+Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 call plug#end()
 
 " Pretty colors
