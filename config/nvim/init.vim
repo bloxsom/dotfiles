@@ -54,6 +54,8 @@ nnoremap <leader>b :ls<CR>:b<space>
 
 " Rails
 autocmd FileType ruby nmap <leader>t :TestFile --format documentation<CR>
+autocmd FileType ruby nmap <C-N> :TestNearest<CR>
+autocmd FileType ruby nmap <leader>l :TestLast<CR>
 autocmd FileType ruby nmap <leader>rs :Estylesheet<space>
 autocmd FileType ruby nmap <leader>rv :Eview<space>
 autocmd FileType ruby nmap <leader>rj :Ejavascript<space>
