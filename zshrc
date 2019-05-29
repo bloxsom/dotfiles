@@ -72,6 +72,9 @@ bindkey '^x^e' edit-command-line
 # Make forward/backward word navigation behave more like bash
 export WORDCHARS=''
 
+fpath=(${fpath[@]} /usr/local/share/zsh/functions)
+autoload -Uz _mv
+
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 
