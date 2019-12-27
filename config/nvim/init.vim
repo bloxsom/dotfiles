@@ -69,6 +69,7 @@ endfunction
 call plug#begin()
 Plug 'AndrewRadev/splitjoin.vim'
 "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'arcticicestudio/nord-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'neomake/neomake'
@@ -103,8 +104,7 @@ call plug#end()
 "let g:hybrid_custom_term_colors = 1
 "let g:hybrid_reduced_contrast = 1 " Remove this line if using the default palette.
 set background=dark
-"colorscheme hybrid
-"colorscheme hybrid_material
+colorscheme nord
 syntax enable
 
 "let g:airline_powerline_fonts = 0
@@ -131,7 +131,7 @@ nmap <leader>cge <Plug>CamelCaseMotion_ge
 "let g:deoplete#ignore_sources.ruby = ['tag']
 
 let g:lightline = {
-  \ 'colorscheme': 'wombat',
+  \ 'colorscheme': 'nord',
   \ 'component': {
   \   'readonly': '%{&readonly?"⭤":""}',
   \ }
