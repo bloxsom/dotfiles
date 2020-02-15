@@ -11,4 +11,4 @@ Install Homebrew formulae from the `Brewfile`:
 
 Symlink dotfiles:
 
-    rcup -v
+    rcup -v -x README.md -x Brewfile
