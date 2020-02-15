@@ -21,15 +21,14 @@ set expandtab tabstop=2 shiftwidth=2
 
 set ignorecase
 set smartcase
-
-set noshowmode
+set noshowmode   " hide mode text, since it's already displayed by lightline
 
 set shell=zsh
 
 if has("autocmd")
   filetype indent plugin on
 endif
-"set omnifunc=syntaxcomplete#Complete
+set omnifunc=syntaxcomplete#Complete
 autocmd BufRead,BufNewFile *.es6 setfiletype javascript
 
 
@@ -44,13 +43,14 @@ nmap <leader>x :x<CR>
 nmap <leader>f :FZF<CR>
 nmap <leader>g :Rg<space>
 nmap <leader>d :Gdiff<CR>
+nmap <leader>vm :e $MYVIMRC<CR>
 
 tnoremap <C-h> <C-\><C-n><C-w>h
 tnoremap <C-j> <C-\><C-n><C-w>j
 tnoremap <C-k> <C-\><C-n><C-w>k
 tnoremap <C-l> <C-\><C-n><C-w>l
 
-nnoremap <leader>b :ls<CR>:b<space>
+nnoremap <leader>b :Buffers<CR>
 
 " Rails
 autocmd FileType ruby nmap <leader>t :TestFile --format documentation<CR>
@@ -67,18 +67,14 @@ function! DoRemote(arg)
 endfunction
 
 call plug#begin()
-Plug 'AndrewRadev/splitjoin.vim'
-"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'arcticicestudio/nord-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'neomake/neomake'
-Plug 'bkad/CamelCaseMotion'
 Plug 'bronson/vim-trailing-whitespace'
-Plug 'ervandew/supertab'
 Plug 'fatih/vim-go'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock'
@@ -93,42 +89,23 @@ Plug 'tpope/vim-vinegar'
 Plug 'wellle/targets.vim'
 Plug 'jremmen/vim-ripgrep'
 Plug 'janko-m/vim-test'
-"Plug 'fishbullet/deoplete-ruby', { 'for': 'ruby' }
 Plug 'w0rp/ale'
-Plug 'zxqfl/tabnine-vim'
+
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 call plug#end()
 
 " Pretty colors
-"syntax enable
-"let g:hybrid_custom_term_colors = 1
-"let g:hybrid_reduced_contrast = 1 " Remove this line if using the default palette.
-set background=dark
 colorscheme nord
 syntax enable
-
-"let g:airline_powerline_fonts = 0
-"let g:airline_theme = 'hybridline'
 
 " Make switching between insert and normal mode faster
 set timeoutlen=1000 ttimeoutlen=0
 
-let g:splitjoin_ruby_hanging_args = 0
-
-" Camel case mappings
-nmap <leader>cw <Plug>CamelCaseMotion_w
-nmap <leader>cb <Plug>CamelCaseMotion_b
-nmap <leader>ce <Plug>CamelCaseMotion_e
-nmap <leader>cge <Plug>CamelCaseMotion_ge
-
-" When writing a buffer, and on normal mode changes (after 750ms).
-"call neomake#configure#automake('nw', 750)
-"let g:neomake_open_list = 2
-
 " Use deoplete.
-"let g:deoplete#enable_at_startup = 1
-"let g:deoplete#ignore_sources = get(g:,'deoplete#ignore_sources',{})
-"let g:deoplete#ignore_sources.ruby = ['tag']
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#ignore_sources = get(g:,'deoplete#ignore_sources',{})
+let g:deoplete#ignore_sources.ruby = ['tag']
 
 let g:lightline = {
   \ 'colorscheme': 'nord',
@@ -145,11 +122,4 @@ autocmd FileType go nmap <leader>r <Plug>(go-run)
 autocmd FileType go nmap <Leader>i <Plug>(go-info)
 autocmd FileType go nmap <leader>t <Plug>(go-test)
 
-" omnifuncs
-set omnifunc=syntaxcomplete#Complete
-"autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-"autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-"autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-"autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-"autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-"autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+let g:loaded_ruby_provider = 0
