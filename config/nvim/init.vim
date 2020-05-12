@@ -77,6 +77,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'kana/vim-textobj-user'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-endwise'
