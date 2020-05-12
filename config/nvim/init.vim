@@ -44,6 +44,7 @@ nmap <leader>f :FZF<CR>
 nmap <leader>g :RG<CR>
 nmap <leader>d :Gdiff<CR>
 nmap <leader>vm :e $MYVIMRC<CR>
+nmap <leader>c :e term://rails c<CR>i
 
 tnoremap <C-h> <C-\><C-n><C-w>h
 tnoremap <C-j> <C-\><C-n><C-w>j
