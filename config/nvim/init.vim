@@ -41,7 +41,7 @@ nmap <leader>q :q<CR>
 nmap <leader>w :w<CR>
 nmap <leader>x :x<CR>
 nmap <leader>f :FZF<CR>
-nmap <leader>g :Rg<space>
+nmap <leader>g :RG<CR>
 nmap <leader>d :Gdiff<CR>
 nmap <leader>vm :e $MYVIMRC<CR>
 
@@ -73,7 +73,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'fatih/vim-go'
 Plug 'itchyny/lightline.vim'
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'kana/vim-textobj-user'
@@ -123,3 +123,15 @@ autocmd FileType go nmap <Leader>i <Plug>(go-info)
 autocmd FileType go nmap <leader>t <Plug>(go-test)
 
 let g:loaded_ruby_provider = 0
+
+let g:ale_fixers = { 'ruby': ['rubocop'] }
+
+function! RipgrepFzf(query, fullscreen)
+  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case %s || true'
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, '{q}')
+  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
+
+command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
