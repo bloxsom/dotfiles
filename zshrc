@@ -15,6 +15,7 @@ alias gd='git diff'
 alias gc='git commit'
 alias gps='git push'
 alias gpl='git pull'
+alias git-recent='git branch --sort=-committerdate -v'
 
 alias r='rails'
 alias rs='rails s'
