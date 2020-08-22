@@ -73,8 +73,8 @@ bindkey '^x^e' edit-command-line
 # Make forward/backward word navigation behave more like bash
 export WORDCHARS=''
 
-bindkey "^[[1;3C" forward-word
-bindkey "^[[1;3D" backward-word
+#bindkey "^[[1;3C" forward-word
+#bindkey "^[[1;3D" backward-word
 
 fpath=(${fpath[@]} /usr/local/share/zsh/functions)
 autoload -Uz _mv
