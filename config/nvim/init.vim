@@ -78,7 +78,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'kana/vim-textobj-user'
-Plug 'ludovicchabant/vim-gutentags'
+"Plug 'ludovicchabant/vim-gutentags'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-endwise'
@@ -92,9 +92,14 @@ Plug 'wellle/targets.vim'
 Plug 'jremmen/vim-ripgrep'
 Plug 'janko-m/vim-test'
 Plug 'w0rp/ale'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
+Plug 'maralla/completor.vim'
+
+"Plug 'ervandew/supertab'
+"Plug 'zxqfl/tabnine-vim'
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 call plug#end()
 
 " Pretty colors
@@ -106,8 +111,8 @@ set timeoutlen=1000 ttimeoutlen=0
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#ignore_sources = get(g:,'deoplete#ignore_sources',{})
-let g:deoplete#ignore_sources.ruby = ['tag']
+"let g:deoplete#ignore_sources = get(g:,'deoplete#ignore_sources',{})
+"let g:deoplete#ignore_sources.ruby = ['tag']
 
 let g:lightline = {
   \ 'colorscheme': 'nord',
